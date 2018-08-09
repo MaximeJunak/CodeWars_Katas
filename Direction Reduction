@@ -1,0 +1,29 @@
+def dirReduc(arr):   
+    arr=list(arr)
+    booly=True
+    while booly==True:  
+        for i,j in enumerate(range(1,len(arr))):
+            soup=arr[i]+arr[j]
+            if ("NORTHSOUTH" or "SOUTHNORTH" or "EASTWEST" or "WESTEAST") in soup:
+                arr[i]="5"
+                arr[j]="5"
+            if "SOUTHNORTH" in soup:
+                arr[i]="5"
+                arr[j]="5"
+            if "EASTWEST" in soup:
+                arr[i]="5"
+                arr[j]="5"
+            if "WESTEAST" in soup:
+                arr[i]="5"
+                arr[j]="5"
+            print(soup)
+            print(arr)
+        if "5" in arr:
+            booly=True
+        else:
+            booly=False
+        print(arr)
+        print(booly)
+        arr=list(filter(lambda x:x!="5",arr))
+    
+    return arr
